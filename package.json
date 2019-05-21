@@ -44,7 +44,8 @@
   "scripts": {
     "start": "webpack-dev-server --progress --hot --port 3001 --open",
     "build": "NODE_ENV=production webpack",
-    "deploy": "./scripts/deploy.sh"
+    "deploy": "./scripts/deploy.sh",
+    "trial-deploy": "./scripts/build-and-branch.sh",
   },
   "babel": {
     "presets": [

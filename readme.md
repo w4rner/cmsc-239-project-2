@@ -10,7 +10,7 @@ The output of this work will be a public facing web page hosted on github pages.
 0. Make sure all members of your group have github account
 1. One person should clone or fork THIS_REPO_HERE, add the other members as contributors via the settings tab. If you are uncomfortable with having this code be public you can make staff contributors as well so we can look at the code. Our github ids are: kindlmann, mcnuttandrew, lik11, and trihuynh88.
 2. WRITE YOUR PROJECT!!!!!!!!!!!!!!!!!!!!
-3. When you are ready to put your web page up (probably make sure you can do this right from the beginning), simply run our deploy script via npm run deploy
+3. When you are ready to put your web page up (probably make sure you can do this right from the beginning), simply run our deploy script via npm run deploy which push everything straight onto your github pages. If you are unsure if your build will work, then you can try running npm run trial-deploy which does everything except actually push to github. We find that it is effective to run npm run trial-deploy, and then do something like live-server or simple python http server to check that you page will be read correctly.
 
 
 ## Requirements

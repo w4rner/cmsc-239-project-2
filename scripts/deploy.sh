@@ -1,12 +1,5 @@
-exists=`git show-ref gh-pages`
-if [ -n "$exists" ]; then
-    git branch -D gh-pages
-fi
-git branch gh-pages
-git checkout gh-pages
-npm run build
-mv dist/bundle.js ./
-rm -rf dist/
+./build-and-branch.sh
+git push --set-upstream origin gh-pages -f
 git add --a
-git commit -m 'deploy'
-# git push --set-upstream origin gh-pages -f
+git stash
+git git checkout master
