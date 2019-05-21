@@ -17,10 +17,10 @@ The output of this work will be a public facing web page hosted on github pages.
 
 - A short article on any topic you wish. The tone of this article should be relatively light, and should be written in a manner that would be easy to understand to most of the public. It should be more than 800 words and less than 1500 words.
 
-- Interlaced through this article should be a minimum of 5 charts. Each of these charts must have a mechanism to meaningfully interact with the data.
-  - This could be a widget that controls a data parameter (changing the color of every point in a scatterplot from red to blue would be an example of a NON-meaningful).
-  - The could be through brushing or clicking and dragging interactions,
-  - This could be a map
+- Interlaced through this article should be a minimum of 5 charts. Each of these charts must have a mechanism to meaningfully interact with the data. Changing the color of every point in a scatterplot from red to blue would be an example of a NON-meaningful, while a widget that intelligently highlights particular points would be meaningful.
+  - This could be a widget that controls a data parameter.
+  - The could be through brushing or clicking and dragging interactions.
+  - This could be an interactive map or graph.
 These charts should be meaningful different and should each individually add to the story you are telling.
 
 - We will be grading by looking at web pages, so you must follow the instructions above.
