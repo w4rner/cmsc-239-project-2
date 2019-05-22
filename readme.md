@@ -8,14 +8,14 @@ The output of this work will be a public facing web page hosted on github pages.
 ## Instructions
 
 0. Make sure all members of your group have github account
-1. One person should clone or fork THIS_REPO_HERE, add the other members as contributors via the settings tab. If you are uncomfortable with having this code be public you can make staff contributors as well so we can look at the code. Our github ids are: kindlmann, mcnuttandrew, lik11, and trihuynh88.
-2. WRITE YOUR PROJECT!!!!!!!!!!!!!!!!!!!!
+1. One person should clone or fork this repo (https://github.com/mcnuttandrew/cmsc-239-project-2), add the other members as contributors via the settings tab. If you are uncomfortable with having this code be public you can make staff contributors as well so we can look at the code. Our github ids are: kindlmann, mcnuttandrew, lik11, and trihuynh88.
+2. ¡WRITE YOUR PROJECT!
 3. When you are ready to put your web page up (probably make sure you can do this right from the beginning), simply run our deploy script via npm run deploy which push everything straight onto your github pages. If you are unsure if your build will work, then you can try running npm run trial-deploy which does everything except actually push to github. We find that it is effective to run npm run trial-deploy, and then do something like live-server or simple python http server to check that you page will be read correctly.
 
 
 ## Requirements
 
-- A short article on any topic you wish. The tone of this article should be relatively light, and should be written in a manner that would be easy to understand to most of the public. It should be more than 800 words and less than 1500 words.
+- The project is a short article you write on any topic you wish. The tone of this article should be relatively light, and should be written in a manner that would be easy to understand to most of the public. It should be more than 800 words and less than 1500 words.
 
 - Interlaced through this article should be a minimum of 5 charts. Each of these charts must have a mechanism to meaningfully interact with the data. Changing the color of every point in a scatterplot from red to blue would be an example of a NON-meaningful, while a widget that intelligently highlights particular points would be meaningful.
 
@@ -27,7 +27,7 @@ These charts should be meaningful different and should each individually add to 
 
 - We will be grading by looking at web pages, so you absolutely must have a working web page on the internet for us to look at.
 
-- In to the project-2 folder on svn you will turn in a short txt file that says: the url of web page, the url of your code (again if your code is private you must add the course staff to the repo), and a short description of who did what in your project.
+- In the p2 folder on svn you will turn in a short txt file that says: the url of web page, the url of your code (again if your code is private you must add the course staff to the repo), and a short description of who did what in your project.
 
 
 ## Logistics
@@ -68,16 +68,16 @@ You should not feel obligated to do elaborate scrolly telling interactions.
 
 If you are considering doing a map based visualization, there are a bunch of powerful web tools that go way beyond the rudimentary svg manipulation in d3-geo. Here's a brief interview of some good tools
 
-- mapbox: the gold standard in industry for doing custom mapping
+- Mapbox: the gold standard in industry for doing custom mapping
 
 - leaflet: an open source version of that tool
 
-- react-map-gl: a react wrapper on the mapbox functionality (requires getting an API token from mapbox, but i think they offer free ones for low volume users like yourselves) https://uber.github.io/react-map-gl/#/Examples/camera-transition
+- react-map-gl: a react wrapper on the Mapbox functionality (requires getting an API token from Mapbox, but i think they offer free ones for low volume users like yourselves) https://uber.github.io/react-map-gl/#/Examples/camera-transition
 
-- deck.gl: a tool for doing webgl powered visualizations either on maps or otherwise. (You don't actually have to web gl coding, you can just mash components together)
+- deck.gl: a tool for doing WebGL powered visualizations either on maps or otherwise. (You don't actually have to web gl coding, you can just mash components together)
 
-- Open street maps: OSM is kinda like a wikipedia for maps, in that it is all user constructed. You probably won't use it directly, but if you use leaflet or mapbox you can source your tiles from OSM for free.
+- Open street maps: OSM is kinda like a wikipedia for maps, in that it is all user constructed. You probably won't use it directly, but if you use leaflet or Mapbox you can source your tiles from OSM for free.
 
-- Google maps: everyone uses it, it's everywhere. The api is reasonable easy to work, but there is a limited set of things you can do with it. If you do not need to customize your map too much, this is a great choice.
+- Google maps: everyone uses it, it's everywhere. The API is reasonable easy to work, but there is a limited set of things you can do with it. If you do not need to customize your map too much, this is a great choice.
 
-Note: depending on the visualization you are building you might not need fancy web map tools like these! Many visualizations you see in nyt and other similar outlets use straight svg maps for choropleths and sometimes contour maps.
+Note: depending on the visualization you are building you might not need fancy web map tools like these! Many visualizations you see in New York Times and other similar outlets use straight SVG maps for Choropleths and sometimes contour maps.
