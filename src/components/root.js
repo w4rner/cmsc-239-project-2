@@ -17,6 +17,7 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 constant. One can represent this pure tone as a wave function where the height of the maximum or
 minimum point of the wave represents the volume of the sound, called the amplitude.
 `;*/
+first();
 const paragraph1 = `
   Sound can be thought of as oscillations in the density of air particles. These oscillations
 can be modeled as waves, with a given beats per second, or frequency, and a volume
@@ -86,7 +87,6 @@ class RootComponent extends React.Component {
   }
 }
 RootComponent.displayName = 'RootComponent';
-first();
 export default RootComponent;
 
 /*
