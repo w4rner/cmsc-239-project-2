@@ -86,6 +86,7 @@ class RootComponent extends React.Component {
   }
 }
 RootComponent.displayName = 'RootComponent';
+first();
 export default RootComponent;
 
 /*
