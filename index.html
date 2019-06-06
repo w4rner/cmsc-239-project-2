@@ -8,9 +8,15 @@
     <link href="main.css"  type="text/css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://unpkg.com/react-vis/dist/style.css">
+
   </head>
   <body>
     <div id="app" class="flex center">X_k = \sum_{n=0}^{N - 1}x_ne^{-i2\pi kn/N}</div>
     <script src="bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <input type="range" min="0" max="1000" value="0" step="1" id="slider" />
+
+    <svg><path d="" id = "first"></path></svg>
   </body>
 </html>

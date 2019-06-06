@@ -105,3 +105,15 @@
   padding: 6px;
   text-transform: uppercase;
 }
+
+path {
+  stroke: #2727e6;
+  stroke-width: 10px;
+  stroke-linecap: round;
+  fill: none;
+}
+
+svg {
+  width: 600px;
+  height: 400px;
+}
