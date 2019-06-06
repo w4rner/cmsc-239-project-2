@@ -1,7 +1,8 @@
 import React from 'react';
 import {csv} from 'd3-fetch';
 import ExampleChart from './example-chart';
-import {DFT} from '../utils.js'
+import {complex} from 'mathjs'
+import {DFT, inverseDFT} from '../utils.js'
 
 const longBlock = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -36,9 +37,11 @@ We may try to weigh points on our function so that the points of peaks of separa
 waves are given a greater weight 
 `;
 
-const exampleTransform = DFT([1,2,3].map(x => Math.cos(x)));
-const exampleInverse = inverseDFT(example)
-console.log(DFT([1, 2, 3].map(x => Math.cos(x))));
+const exampleTransform = DFT([...new Array(1024)].map((d, i) => i).map(x => Math.cos(x)));
+//const exampleInverse = inverseDFT(example)
+console.log(exampleTransform);
+//console.log(fft2([...new Array(1024)].map((d, i) => i).map(x => Math.cos(x))));
+console.log(inverseDFT(exampleTransform));
 
 class RootComponent extends React.Component {
   constructor() {
@@ -71,6 +74,7 @@ class RootComponent extends React.Component {
         <div>{paragraph2}</div>
         <div>{paragraph3}</div>
         <div>{paragraph4}</div>
+        <img width="100%" height="100%" align-items="center" src="../../img/Discrete_Fourier_Transform.gif" />
         <ExampleChart data={data}/>
       </div>
     );

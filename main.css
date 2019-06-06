@@ -29,6 +29,12 @@
   width: auto;
 }
 
+.equation {
+  item-align: center;
+  width: auto;
+  height: auto;
+}
+
 .flex {
   display: flex;
   width: auto;
