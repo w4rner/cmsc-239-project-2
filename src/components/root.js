@@ -37,6 +37,10 @@ We may try to weigh points on our function so that the points of peaks of separa
 waves are given a greater weight 
 `;
 
+const paragraph5 = `
+Laurence try commit to master branch.
+`;
+
 const exampleTransform = DFT([...new Array(1024)].map((d, i) => i).map(x => Math.cos(x)));
 //const exampleInverse = inverseDFT(example)
 console.log(exampleTransform);
@@ -74,6 +78,7 @@ class RootComponent extends React.Component {
         <div>{paragraph2}</div>
         <div>{paragraph3}</div>
         <div>{paragraph4}</div>
+        <div>{paragraph5}</div>
         <img width="100%" height="100%" align-items="center" src="../../img/Discrete_Fourier_Transform.gif" />
         <ExampleChart data={data}/>
       </div>
