@@ -49,7 +49,8 @@ export function fft2(X) {
 }
 */
 
-export function first(){
+export function first() {
+    console.log('first running');
     let xs = []
 
     for(var i = 0; i < 200 * Math.PI; i+= .01){
