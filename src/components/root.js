@@ -2,7 +2,7 @@ import React from 'react';
 import {csv} from 'd3-fetch';
 import ExampleChart from './example-chart';
 import {complex} from 'mathjs'
-import {DFT, inverseDFT} from '../utils.js'
+import {DFT, inverseDFT, first} from '../utils.js'
 
 const longBlock = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
