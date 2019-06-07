@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+//  window.requestAnimationFrame(draw);
   first();
   second();
   third();
 }, false);
+
+  let step = -4;
 
   const text1 = `
     Sound can be thought of as oscillations in air density over time, similar to a spring compressing and
@@ -27,9 +30,24 @@ document.addEventListener('DOMContentLoaded', () => {
   We may try to weigh points on our function so that the points of peaks of separate sound
   waves are given a greater weight
   `;
-  const text6 = `
-  Laurence try commit to master branch.
-  `;
+
+const textDraft = `
+  Sound can be thought of as oscillations in air density over time, similar to a spring compressing and
+decompressing. Such oscillations can be described by waves with a frequency, the number of oscillations
+occurring in one second, and an amplitude, one-half the different between the highest and lowest point(s)
+in the wave. In music, different notes correspond to different frequencies, and loudness corresponds to
+amplitude.
+
+When two waves intersect in space, their values add linearly as seen below:
+
+And this linearity holds for any number of sounds. However, if we wanted to take some sound wave and
+determine the frequencies that compose this sound wave, it can become difficult to do so by eye alone.
+Below we can see what happens when we add together only six waves:
+
+It's non-obvious that the component frequencies are 1/9, 1/10, ... and music includes far more than
+just six frequencies, not to mention that music is not composed of the same pattern of notes.
+`;
+
   const body = d3.select('body');
   const paragraph1 = body.append('p').attr('class', 'container');
   const paragraph2 = body.append('p').attr('class', 'container');
@@ -53,10 +71,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // function for our first visualization
 // a sinusoidal wave with modifiable amplitude and frequency
-function first() {
-    let xs = []
+function drawSin(ctx, amplitude, frequency, xOffset, yOffset) {
+  let width = ctx.canvas.width;
+  let height = ctx.canvas.height;
+  let scale = 20;
 
-    for(var i = 0; i < 200 * Math.PI; i+= .01){
+  ctx.beginPath();
+  let x = 0;
+  let y = 0;
+  ctx.moveTo(x, y);
+  while (x < width) {
+    y = height / 2 + amplitude * Math.sin((x + xOffset) * frequency);
+    ctx.lineTo(x, y);
+    x++;
+  }
+  ctx.stroke();
+  ctx.save();
+
+  ctx.restore();
+}
+
+function draw() {
+  let canvas = document.getElementById("animation1");
+  let context = canvas.getContext("2d");
+
+  context.clearRect(0, 0, 300, 500);
+//  showAxes(context);
+  context.save();
+
+  let A = 20;
+  let f = 1/10;
+  let height = 200;
+
+  $("#Aslider1").on("input", function() {
+    A = $(this).val();
+  });
+  $("#Fslider1").on("input", function() {
+    f = $(this).val();
+  });
+
+  drawSin(context, A, f, step, height);
+  context.restore();
+
+  step += 4;
+  window.requestAnimationFrame(draw);
+}
+
+function first() {
+  let xs = [];
+
+    for(var i = 0; i < 200 * Math.PI; i += 1) {
         xs.push(i);
     }
 
@@ -74,7 +138,7 @@ function first() {
         f = $(this).val();
     });
 
-    function animate(){
+    function animate() {
         let points = xs.map(x => {
             let y = A * Math.sin((x + t) * f);
             return[x,y + height];
@@ -86,7 +150,7 @@ function first() {
 
         document.querySelector("#first1").setAttribute("d", path);
 
-        t += 1;
+        t = t <= 200 * Math.PI ? t + 1 : 0;
         requestAnimationFrame(animate);
 
     };
@@ -97,7 +161,7 @@ function first() {
 // two wave fronts intersecting
 function second() {
   let xs = []
-  for(var i = 0; i < 120 * Math.PI; i+= .01){
+  for(var i = 0; i < 120 * Math.PI; i+= 1){
       xs.push(i);
   }
 
@@ -171,7 +235,7 @@ function second() {
 function third() {
   let xs = []
 
-  for(var i = 0; i < 100 * Math.PI; i+= .01){
+  for(var i = 0; i < 100 * Math.PI; i+= 1){
       xs.push(i);
   }
 

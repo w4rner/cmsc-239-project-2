@@ -11,7 +11,7 @@
 
   </head>
   <body class="container">
-    <h1 className="header">Analyzing Sound Waves with the Discrete Fourier Transform</h1>
+    <h1 class="header">Analyzing Sound Waves with the Discrete Fourier Transform</h1>
     <div id="app" class="flex center"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
@@ -20,16 +20,14 @@
     <text text="Sound can be thought of as oscillations in the density of air particles. These oscillations
   can be modeled as waves, with a given beats per second, or frequency, and a volume given by the height, or amplitude of the wave." />
     -->
-    <p text="\tSound can be thought of as oscillations in air density over time, similar to a spring compressing and
-  decompressing. Oscillations like this can be described by waves, with a constant number of oscillations
-  occurring in one second, or frequency, and constant maximum height, the wave's amplitude. Different
-  notes correspond to different frequencies, and loudness correspond to amplitude.">
-      <input type="range" min="0" max="100" value="0" step="1" id="Aslider1" />
-      <input type="range" min="2" max="0" value="0" step="-0.001" id="Fslider1" />
-      <svg>
+    <p id="text1" />
+    <div class="container">
+      <input type="range" min="0" max="0.2" value="0.1" step="0.001" id="Fslider1" /><br />
+      <input type="range" min="0" max="80" value="20" step="1" id="Aslider1" />
+      <svg class="" class="main-animation">
         <path d="" id="first1"></path>
       </svg>
-    </p>
+    </div>
     <label>
       <input type="range" min="0" max="100" value="0" step="1" id="Aslider12" />Left Wave Amplitude
     </label>
@@ -48,26 +46,26 @@
     </svg>
     <label>
       <input class="checkbox-wave" type="checkbox" id="Check1">
-      <svg heigt="100" width="150"><path d="" id="first3"></path></svg>
+      <svg class="sub-animation" heigt="100" width="150"><path d="" id="first3"></path></svg>
     </label>
     <input class="checkbox-wave" type="checkbox" id="Check2">
-    <svg>
+    <svg class="sub-animation">
       <path d="" id="second3"></path>
     </svg>
     <input class="checkbox-wave" type="checkbox" id="Check3">
-    <svg>
+    <svg class="sub-animation">
       <path d="" id="third3"></path>
     </svg>
     <input class="checkbox-wave" type="checkbox" id="Check4">
-    <svg>
+    <svg class="sub-animation">
       <path d="" id = 'fourth3'></path>
-    </svg>
+    </svg class="sub-animation">
     <input class="checkbox-wave" type="checkbox" id="Check5">
-    <svg>
+    <svg class="sub-animation">
       <path d="" id = 'fifth3'></path>
     </svg>
     <input class="checkbox-wave" type="checkbox" id="Check6">
-    <svg>
+    <svg class="sub-animation">
       <path d="" id = 'sixth3'></path>
     </svg>
   </body>
