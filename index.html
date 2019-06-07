@@ -11,57 +11,64 @@
 
   </head>
   <body class="container">
+    <h1 className="header">Analyzing Sound Waves with the Discrete Fourier Transform</h1>
     <div id="app" class="flex center"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="index.js"></script>
+    <!--
     <text text="Sound can be thought of as oscillations in the density of air particles. These oscillations
   can be modeled as waves, with a given beats per second, or frequency, and a volume given by the height, or amplitude of the wave." />
-    <svg><path d="" id="first"></path></svg>
-    <input type="range" min="0" max="100" value="0" step="1" id="Aslider1" />
-    <input type="range" min="2" max="0" value="0" step="-0.001" id="Fslider1" />
-
-    <input type="range" min="0" max="100" value="0" step="1" id="Aslider12" />
-    <input type="range" min="0" max="80" value="0" step="1" id="Fslider12" />
-
-    <input type="range" min="0" max="100" value="0" step="1" id="Aslider22" />
-    <input type="range" min="0" max="80" value="0" step="1" id="Fslider22" />
+    -->
+    <p text="\tSound can be thought of as oscillations in air density over time, similar to a spring compressing and
+  decompressing. Oscillations like this can be described by waves, with a constant number of oscillations
+  occurring in one second, or frequency, and constant maximum height, the wave's amplitude. Different
+  notes correspond to different frequencies, and loudness correspond to amplitude.">
+      <input type="range" min="0" max="100" value="0" step="1" id="Aslider1" />
+      <input type="range" min="2" max="0" value="0" step="-0.001" id="Fslider1" />
+      <svg>
+        <path d="" id="first1"></path>
+      </svg>
+    </p>
+    <label>
+      <input type="range" min="0" max="100" value="0" step="1" id="Aslider12" />Left Wave Amplitude
+    </label>
     <svg>
-      <path d="" id = "first1"></path>
+      <path d="" id="first2"></path>
     </svg>
+    <label>
+      <input type="range" min="0" max="80" value="0" step="1" id="Fslider12" />Left Wave Frequency
+    </label>
+    <label>
+      <input type="range" min="0" max="100" value="0" step="1" id="Aslider22" />Right Wave Amplitude
+    </label>
+    <input type="range" min="0" max="80" value="0" step="1" id="Fslider22" />Right Wave Frequency
     <svg>
-      <path d="" id = "first2"></path>
+      <path d="" id="final3"></path>
     </svg>
-    <input type="checkbox" id="Check1">
-    <input type="checkbox" id="Check2">
-    <input type="checkbox" id="Check3">
-    <input type="checkbox" id="Check4">
-    <input type="checkbox" id="Check5">
-    <input type="checkbox" id="Check6">
+    <label>
+      <input class="checkbox-wave" type="checkbox" id="Check1">
+      <svg heigt="100" width="150"><path d="" id="first3"></path></svg>
+    </label>
+    <input class="checkbox-wave" type="checkbox" id="Check2">
     <svg>
-      <path d="" id = 'final3'></path>
+      <path d="" id="second3"></path>
     </svg>
+    <input class="checkbox-wave" type="checkbox" id="Check3">
     <svg>
-      <path d="" id = 'first3'></path>
+      <path d="" id="third3"></path>
     </svg>
-    <svg>
-      <path d="" id = 'second3'></path>
-    </svg>
-    <svg>
-      <path d="" id = 'third3'></path>
-    </svg>
+    <input class="checkbox-wave" type="checkbox" id="Check4">
     <svg>
       <path d="" id = 'fourth3'></path>
     </svg>
+    <input class="checkbox-wave" type="checkbox" id="Check5">
     <svg>
       <path d="" id = 'fifth3'></path>
     </svg>
+    <input class="checkbox-wave" type="checkbox" id="Check6">
     <svg>
       <path d="" id = 'sixth3'></path>
     </svg>
-    <svg>
-      <path d="" id = 'final3'></path>
-    </svg>
-
   </body>
 </html>

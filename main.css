@@ -119,3 +119,11 @@ svg {
   width: 600px;
   height: 400px;
 }
+
+.checkbox-wave {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+  width: 150px;
+  height: 100px;
+}

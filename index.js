@@ -31,10 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
   Laurence try commit to master branch.
   `;
   const body = d3.select('body');
-  const paragraph1 = body.append('div').attr('class', 'container');
+  const paragraph1 = body.append('p').attr('class', 'container');
+  const paragraph2 = body.append('p').attr('class', 'container');
 
-  paragraph1.append('text')
-    .text(text1);
+  paragraph1.text(text1);
+  paragraph2.text(text2);
 
   /*
   const vis1 = body.append('svg')
