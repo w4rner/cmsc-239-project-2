@@ -27,6 +27,8 @@
   flex-direction: column;
   padding: 50px;
   width: auto;
+  font-family: Verdana;
+  font-size: 12px;
 }
 
 .equation {
