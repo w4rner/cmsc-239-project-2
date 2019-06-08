@@ -67,15 +67,9 @@ export function inverseDFT(frequencySampling) {
   return inverseTransform;
 }
 
-function buildWave(A, k) {
-  return (x => A*Math.sin(k*x));
-}
-
 function polarToCartesian(centerX, centerY, radius, angle) {
-  // Calculate cartesian points from polar coordinates given
-  // radius = f(theta)
   return {
-    x: centerX + radius * Math.cos(angle),
-    y: centerY + radius * Math.sin(angle)
+    x: centerX + (radius * Math.cos(angle)),
+    y: centerY + (radius * Math.sin(angle))
   };
 }

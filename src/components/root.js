@@ -17,7 +17,6 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 constant. One can represent this pure tone as a wave function where the height of the maximum or
 minimum point of the wave represents the volume of the sound, called the amplitude.
 `;*/
-first();
 const paragraph1 = `
   Sound can be thought of as oscillations in the density of air particles. These oscillations
 can be modeled as waves, with a given beats per second, or frequency, and a volume
@@ -42,11 +41,11 @@ const paragraph5 = `
 Laurence try commit to master branch.
 `;
 
-const exampleTransform = DFT([...new Array(1024)].map((d, i) => i).map(x => Math.cos(x)));
+//const exampleTransform = DFT([...new Array(1024)].map((d, i) => i).map(x => Math.cos(x)));
 //const exampleInverse = inverseDFT(example)
-console.log(exampleTransform);
+//console.log(exampleTransform);
 //console.log(fft2([...new Array(1024)].map((d, i) => i).map(x => Math.cos(x))));
-console.log(inverseDFT(exampleTransform));
+//console.log(inverseDFT(exampleTransform));
 
 class RootComponent extends React.Component {
   constructor() {
@@ -68,6 +67,7 @@ class RootComponent extends React.Component {
   }
 
   render() {
+    first();
     const {loading, data} = this.state;
     if (loading) {
       return <h1 class="header">LOADING</h1>;
@@ -75,11 +75,13 @@ class RootComponent extends React.Component {
     return (
       <div className="container">
         <h1 className="header">Analyzing Sound Waves with the Discrete Fourier Transform</h1>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <div>{paragraph1}</div>
         <div>{paragraph2}</div>
         <div>{paragraph3}</div>
         <div>{paragraph4}</div>
         <div>{paragraph5}</div>
+        <div>{first()}</div>
         <img width="100%" height="100%" align-items="center" src="../../img/Discrete_Fourier_Transform.gif" />
         <ExampleChart data={data}/>
       </div>
@@ -88,9 +90,3 @@ class RootComponent extends React.Component {
 }
 RootComponent.displayName = 'RootComponent';
 export default RootComponent;
-
-/*
-<div>{`The example data was loaded! There are ${data.length} rows`}</div>
-<ExampleChart data={data}/>
-<div>{longBlock}</div>
-*/

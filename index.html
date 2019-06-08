@@ -16,57 +16,119 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="index.js"></script>
-    <!--
-    <text text="Sound can be thought of as oscillations in the density of air particles. These oscillations
-  can be modeled as waves, with a given beats per second, or frequency, and a volume given by the height, or amplitude of the wave." />
-    -->
-    <p id="text1" />
+    <p class="container" id="text1">
+        Sound can be thought of as oscillations in air density over time, similar to a spring compressing and
+      decompressing. Such oscillations can be described by waves with a frequency, the number of oscillations
+      occurring in one second, and an amplitude, one-half the different between the highest and lowest point(s)
+      in the wave. In music, different notes correspond to different frequencies, and loudness corresponds to
+      amplitude.
+    </p>
     <div class="container">
-      <input type="range" min="0" max="0.2" value="0.1" step="0.001" id="Fslider1" /><br />
-      <input type="range" min="0" max="80" value="20" step="1" id="Aslider1" />
-      <svg class="" class="main-animation">
+      <svg class="main-animation">
         <path d="" id="first1"></path>
       </svg>
+      <label>Frequency<input type="range" min="0" max="0.2" value="0.1" step="0.001" id="Fslider1" /></label>
+      <label>Amplitude<input type="range" min="0" max="80" value="20" step="1" id="Aslider1" /></label>
     </div>
-    <label>
-      <input type="range" min="0" max="100" value="0" step="1" id="Aslider12" />Left Wave Amplitude
-    </label>
-    <svg>
-      <path d="" id="first2"></path>
-    </svg>
-    <label>
-      <input type="range" min="0" max="80" value="0" step="1" id="Fslider12" />Left Wave Frequency
-    </label>
-    <label>
-      <input type="range" min="0" max="100" value="0" step="1" id="Aslider22" />Right Wave Amplitude
-    </label>
-    <input type="range" min="0" max="80" value="0" step="1" id="Fslider22" />Right Wave Frequency
-    <svg>
-      <path d="" id="final3"></path>
-    </svg>
-    <label>
-      <input class="checkbox-wave" type="checkbox" id="Check1">
-      <svg class="sub-animation" heigt="100" width="150"><path d="" id="first3"></path></svg>
-    </label>
-    <input class="checkbox-wave" type="checkbox" id="Check2">
-    <svg class="sub-animation">
-      <path d="" id="second3"></path>
-    </svg>
-    <input class="checkbox-wave" type="checkbox" id="Check3">
-    <svg class="sub-animation">
-      <path d="" id="third3"></path>
-    </svg>
-    <input class="checkbox-wave" type="checkbox" id="Check4">
-    <svg class="sub-animation">
-      <path d="" id = 'fourth3'></path>
-    </svg class="sub-animation">
-    <input class="checkbox-wave" type="checkbox" id="Check5">
-    <svg class="sub-animation">
-      <path d="" id = 'fifth3'></path>
-    </svg>
-    <input class="checkbox-wave" type="checkbox" id="Check6">
-    <svg class="sub-animation">
-      <path d="" id = 'sixth3'></path>
-    </svg>
+    <p class="container" id="text2">
+      When two waves intersect in space, their values add linearly as seen below:
+    </p>
+    <div class="container">
+      <svg class="main-animation">
+        <path d="" id="first2"></path>
+      </svg><br />
+      <label><input type="range" min="0" max="80" value="20" step="1" id="Aslider12" />Left Wave Amplitude</label>
+      <label><input type="range" min="0" max="0.2" value="0.1" step="0.001" id="Fslider12" />Left Wave Frequency</label>
+      <label><input type="range" min="0" max="80" value="20" step="1" id="Aslider22" />Right Wave Amplitude</label>
+      <label><input type="range" min="0" max="0.2" value="0.1" step="0.001" id="Fslider22" />Right Wave Frequency</label>
+    </div>
+    <div class="container">
+      <svg class="main-animation">
+        <path d="" id="final3"></path>
+      </svg>
+      <label>
+        <input class="checkbox-wave" type="checkbox" id="Check1">
+        <svg class="sub-animation" heigt="100" width="150"><path d="" id="first3"></path></svg>
+      </label>
+      <label>
+        <input class="checkbox-wave" type="checkbox" id="Check2">
+        <svg class="sub-animation">
+          <path d="" id="second3"></path>
+        </svg>
+      </label>
+      <label>
+        <input class="checkbox-wave" type="checkbox" id="Check3">
+        <svg class="sub-animation">
+          <path d="" id="third3"></path>
+        </svg>
+      </label>
+      <label>
+        <input class="checkbox-wave" type="checkbox" id="Check4">
+        <svg class="sub-animation">
+          <path d="" id = 'fourth3'></path>
+        </svg class="sub-animation">
+      </label>
+      <label>
+        <input class="checkbox-wave" type="checkbox" id="Check5">
+        <svg class="sub-animation">
+          <path d="" id = 'fifth3'></path>
+        </svg>
+      </label>
+      <label>
+        <input class="checkbox-wave" type="checkbox" id="Check6">
+        <svg class="sub-animation">
+          <path d="" id = 'sixth3'></path>
+        </svg>
+      </label>
+    </div>
+    <p class="container">
+      It's non-obvious that the component frequencies are 1/10, 1/18, 1/22, 1/40, 1/9, and 1/2 and music includes
+      far more than just six frequencies, not to mention that music is not composed of the same pattern of notes.
+      Why should we care about separating a sound wave component frequencies? Well knowing which frequencies
+      compose a sound wave, we can boost the parts we want and remove the parts we don't, such as crackles caused
+      by random noise. It's essential to music production to accurately find component frequencies!
+    </p>
+    <p class="container">
+      Fortunately, there exists a mathematical tool for finding these frequencies: the Fourier Transform! The
+      transform is constructed by using the periodicity of Euler's formula and of wave functions. Consider a
+      point traveling on a sine wave, mapped to a point on a circle, as shown below. The point travels around the circle in
+      the same time it takes to complete one period of the wave, i.e. the amount of time it takes for the wave to
+      repeat.
+    </p>
+
+    <p>
+      Euler's formula exhibits a similar periodicity when mapped over time,
+    </p>
+    <p>
+      <Euler's equation in terms of time and arbitrary frequency f>
+      with the rate it travels around the circle given by f. We then have that, over a period of time, the product
+      of the wave function mapped onto a circle and of Euler's formula is greatest when the two make the same
+      number of rotations about the circle over a period of time, i.e. when they have the same frequency. It also
+      happens that when the two are out of sync, their product is relatively small.
+    </p>
+    <p>
+      Below we can see what happens when we sample a period of time and calculate the Fourier transform of the
+      complicated sum of waves we had above.
+    </p>
+    <p>
+      with the rate it travels around the circle given by f. We then have that, over a period of time, the product
+      of the wave function mapped onto a circle and of Euler's formula is greatest when the two make the same
+      number of rotations about the circle over a period of time, i.e. when they have the same frequency. It also
+      happens that when the two are out of sync, their product is relatively small.
+    </p>
+    <p>
+      Below we can see what happens when we sample a period of time and calculate the Fourier transform of the
+      complicated sum of waves we had above.
+    </p>
+    <p>
+      For our sum of six waves, we have six distinct peaks! The axis of the transform is not directly in terms of frequency, but rather in terms of the period times
+      the frequency, Tk. One simply needs to divide by our period of 200*pi to determine the frequency.
+    </p>
+    <div class="container" id='fourierSVG'>
+      <button id = "FourierButton">Fourier Transform</button>
+      <input type="range" min="50" max="1000" value="0" step="10" id="FourierSlider" />
+    </div>
+    <p>
+    </p>
   </body>
 </html>
