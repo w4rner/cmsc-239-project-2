@@ -38,12 +38,12 @@
         <path d="" id="first2"></path>
       </svg><br />
       <label><input type="range" min="0" max="80" value="20" step="1" id="Aslider12" />Left Wave Amplitude</label>
-      <label><input type="range" min="0" max="0.2" value="0.1" step="0.001" id="Fslider12" />Left Wave Frequency</label>
+      <label><input type="range" min="0" max="1" value="0.1" step="0.01" id="Fslider12" />Left Wave Frequency</label>
       <label><input type="range" min="0" max="80" value="20" step="1" id="Aslider22" />Right Wave Amplitude</label>
-      <label><input type="range" min="0" max="0.2" value="0.1" step="0.001" id="Fslider22" />Right Wave Frequency</label>
+      <label><input type="range" min="0" max="1" value="0.1" step="0.01" id="Fslider22" />Right Wave Frequency</label>
     </div>
     <div class="container">
-      <svg class="main-animation">
+      <svg viewBox="5 5 600 200">
         <path d="" id="final3"></path>
       </svg>
       <div flex-direction="row">
@@ -83,7 +83,7 @@
       </label>
     </div>
     <p class="container">
-      It's non-obvious that the component frequencies are 1/10, 1/18, 1/22, 1/40, 1/9, and 1/2 and music includes
+      It's not obvious that the component frequencies are 1/10, 1/18, 1/22, 1/40, 1/9, and 1/2 and music includes
       far more than just six frequencies, not to mention that music is not composed of the same pattern of notes.
       Why should we care about separating a sound wave component frequencies? Well knowing which frequencies
       compose a sound wave, we can boost the parts we want and remove the parts we don't, such as crackles caused
@@ -96,12 +96,14 @@
       the same time it takes to complete one period of the wave, i.e. the amount of time it takes for the wave to
       repeat.
     </p>
-
+    <div id=Fourth>
+      <input type="range" min="0" max="100" value="0" step="0.01" id="FourthSlider" class="slider"> Position Slider</input>
+      <svg viewBox="10 10 800 400" class="main-animation" id="fourthSVG"></svg>
+    </div>
     <p>
       Euler's formula exhibits a similar periodicity when mapped over time,
     </p>
     <p>
-      <Euler's equation in terms of time and arbitrary frequency f>
       with the rate it travels around the circle given by f. We then have that, over a period of time, the product
       of the wave function mapped onto a circle and of Euler's formula is greatest when the two make the same
       number of rotations about the circle over a period of time, i.e. when they have the same frequency. It also
@@ -111,25 +113,20 @@
       Below we can see what happens when we sample a period of time and calculate the Fourier transform of the
       complicated sum of waves we had above.
     </p>
-    <p>
-      with the rate it travels around the circle given by f. We then have that, over a period of time, the product
-      of the wave function mapped onto a circle and of Euler's formula is greatest when the two make the same
-      number of rotations about the circle over a period of time, i.e. when they have the same frequency. It also
-      happens that when the two are out of sync, their product is relatively small.
-    </p>
-    <p>
-      Below we can see what happens when we sample a period of time and calculate the Fourier transform of the
-      complicated sum of waves we had above.
-    </p>
-    <p>
-      For our sum of six waves, we have six distinct peaks! The axis of the transform is not directly in terms of frequency, but rather in terms of the period times
-      the frequency, Tk. One simply needs to divide by our period of 200*pi to determine the frequency.
-    </p>
-    <div class="container" id='fourierSVG'>
-      <button id = "FourierButton">Fourier Transform</button>
-      <input type="range" min="50" max="1000" value="0" step="10" id="FourierSlider" />
+    <div id="fourier">
+      <svg viewBox="10 10 800 400" width="950" height="660" id = "PreF">
+        <path d="" id="PreFourier"></path>
+      </svg>
+    </div>
+    <div class="center">
+      <input type="button" id="FourierButton">Fourier Transform</input>
+      <input type="range" min="50" max="1000" value="0" step="10" id="FourierSlider">#N Samples</input>
+    </div>
+    <div class="container">
+      <svg viewBox="10 10 800 400" class="main-animation" id="FourierSVG"></svg>
     </div>
     <p>
+      For our sum of six waves, we have six distinct peaks! The axis of the transform is not directly in terms of frequency, but rather in terms of the period times the frequency, Tk. One simply needs to divide by our period of 200*pi to determine the frequency.
     </p>
   </body>
 </html>

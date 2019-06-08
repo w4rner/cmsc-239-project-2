@@ -6,31 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   fifth();
 }, false);
 
-  let step = -4;
-
-  const text1 = `
-    Sound can be thought of as oscillations in air density over time, similar to a spring compressing and
-  decompressing. Oscillations like this can be described by waves, with a constant number of oscillations
-  occurring in one second, or frequency, and constant maximum height, the wave's amplitude. Different
-  notes correspond to different frequencies, and loudness correspond to amplitude.
-  `;
-  const text2 = `Why should we care about separating a sound wave component frequencies? Well knowing which
-  frequencies compose a sound wave, we can boost the parts we want and remove the parts we don't. Crackles caused
-  by random noise, or problems caused with recording equipment can also be removed! In short, knowing component frequencies
-  is essential to editing and producing music recordings!
-  `;
-  const text3 = `
-  When two waves intersect in space and time, their values add linearly as seen below,
-  `;
-  const text4 = `
-  The same principle holds for any number of sound waves, but determining which individual sound waves
-  add up to a sound we hear can quickly become difficult:
-  `;
-  const text5 = `
-  So, we ask, given an arbitrary sound wave, how can we determine its component frequencies?
-  We may try to weigh points on our function so that the points of peaks of separate sound
-  waves are given a greater weight
-  `;
+let step = -4;
 
 const textDraft = `
   Sound can be thought of as oscillations in air density over time, similar to a spring compressing and
@@ -82,13 +58,6 @@ complicated sum of waves we had above.
 For our sum of six waves, we have six distinct peaks! The axis of the transform is not directly in terms of frequency, but rather in terms of the period times
 the frequency, Tk. One simply needs to divide by our period of 200*pi to determine the frequency.
 `;
-  const body = d3.select('body');
-  /*const paragraph1 = body.append('p').attr('class', 'container');
-  const paragraph2 = body.append('p').attr('class', 'container');
-
-  paragraph1.text(text1);
-  paragraph2.text(text2);*/
-
 
 // function for our first visualization
 // a sinusoidal wave with modifiable amplitude and frequency
@@ -157,7 +126,7 @@ function second() {
   });
 
   $("#Fslider12").on("input", function() {
-      f1 = 1 / $(this).val();
+      f1 = $(this).val();
   });
 
   $("#Aslider22").on("input", function() {
@@ -165,14 +134,14 @@ function second() {
   });
 
   $("#Fslider22").on("input", function() {
-      f2 = 1 / $(this).val();
+      f2 = $(this).val();
   });
 
-  function animate(){
+  function animate() {
       let points = xs.map(x => {
           let y = 0;
           let y2 = 0;
-          if(x >= low && x <= high){
+        if(x >= low && x <= high){
           y = Math.abs(A1 * Math.sin((high - x) * f1));}
         else{y = 0;}
         if(x >= low2 && x <= high2){
@@ -216,7 +185,7 @@ function third() {
 
   let t = 0;
   let height = 100;
-  let checkBoxHeight = 50;
+  let checkBoxHeight = 75;
 
   let A1 = 20;
   let f1 = 1/10;
@@ -418,7 +387,7 @@ function fourth() {
 // generates our fifth interactive animation
 function fifth(){
     const margin = {top: 40, right: 20, bottom: 100, left: 80};
-    const width = 1050 - margin.left - margin.right;
+    const width = 1200 - margin.left - margin.right;
     const height = 800 - margin.top - margin.bottom;
 
     const SVG_SELECTION = d3.select('#FourierSVG');
