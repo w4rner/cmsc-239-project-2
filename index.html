@@ -92,8 +92,11 @@
       What if it was the other way around: and you were given the combined wave and asked to back out the frequencies of the individual waves. This could be really useful for a music producer. For example, perhaps you want to boost the amplitude of the lowest frequency waves (in this case, the 4th from the left has a frequency of 0.5Hz).
     </p>
     <p class="container">
-      Fortunately, we've got math: specifically the Fourier Transform! The
-      transform is constructed by using Euler's formula and wave functions. To explore how a wave is related to the unit circle, move the point using the slider!
+      Fortunately, we've got math: specifically the Fourier Transform!
+    </p>
+      <img width="244" height="80" margin-left="auto" margin-right="auto" src="/img/Latex_Fourier_Transform.png" />
+    <p>
+      The transform is constructed by using Euler's formula and wave functions. To explore how a wave is related to the unit circle, move the point using the slider!
     </p>
     <div id=Fourth>
       <input type="range" min="0" max="100" value="0" step="0.01" id="FourthSlider" class="slider"> Position Slider</input>
@@ -119,7 +122,7 @@
     </div>
     <div class="center">
       <input type="button" id="FourierButton">Fourier Transform</input>
-      <input type="range" min="50" max="1000" value="0" step="10" id="FourierSlider">#N Samples</input>
+      <input type="range" min="20" max="100" value="20" step="1" id="FourierSlider">#N Samples</input>
     </div>
     <div class="container">
       <svg viewBox="10 10 800 400" class="main-animation" id="FourierSVG"></svg>
