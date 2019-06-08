@@ -11,17 +11,22 @@
 
   </head>
   <body class="container">
-    <h1 class="header">Sound Waves with the Discrete Fourier Transform</h1>
-    <h2><a href="https://github.com/CrimsonRobot">CrimsonRobot</a>
+    <h1 class="header">The Math Behind the Sounds: The Discrete Fourier Transform</h1>
+    <h2><a href="https://github.com/CrimsonRobot">CrimsonRobot</a> |
       <a href="https://github.com/w4rner">w4rner</a>
-        <a href="https://github.com/pmj714">pmj714</a>
+      <a href="https://ceruleansounds.com"><img src="img/cmyk_large.jpg" alt="cerulean" height="35"></a>
+      | <a href="https://github.com/pmj714">pmj714</a>
+
     <div id="app" class="flex center"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="index.js"></script>
-    <p class="container" id="text1">
-        Sound can be thought of as oscillations in air density over time. Such oscillations can be described by waves which have the following two parameters: 1). Frequency: the number of oscillations
-      occurring in one second. 2). Amplitude: the height of the wave. In music, different notes correspond to different frequencies, and loudness corresponds to
+    <p class="container" id="text0">
+      For musicians like our author cerulean, sounds are a wonderful tool, which can be combined and crafted to form pieces of music, like those you can hear at <a href="https://ceruleansounds.com">ceruleansounds.com</a>
+        But we often take for granted the science behind the sounds!
+      </p>
+      <p class="container" id="text1">
+    Sound can be thought of as oscillations in air density over time. Such oscillations can be described by waves which have the following two parameters: 1). Frequency: the number of oscillations occurring in one second. 2). Amplitude: the height of the wave. In music, different notes correspond to different frequencies, and loudness corresponds to
       amplitude. Explore the effect of changing these two parameters on this wave!
     </p>
     <div class="container">
@@ -87,11 +92,11 @@
       </label>
     </div>
     <p class="container">
-      What if it was the other way around: and you were given the combined wave and asked to back out the frequencies of the individual waves. This could be really useful for a music producer. For example, perhaps you want to boost the amplitude of the lowest frequency waves (in this case, the 4th from the left has a frequency of 0.5Hz).
+      What if it was the other way around: and you were given the combined wave and asked to back out the frequencies of the individual waves. For example, sometimes cerulean wants a bass boost. In terms of waves, this means raising the amplitude of the lowest frequency waves (in this case, the 4th from the left has a frequency of 0.5Hz).
     </p>
     <p class="container">
-      Fortunately, we've got math: specifically the Fourier Transform! The
-      transform is constructed by using Euler's formula and wave functions. To explore how a wave is related to the unit circle, move the point using the slider!
+      Fortunately, Jack & Patrick know some math and can help them: specifically the Fourier Transform! The
+      transform is constructed by using Euler's formula which relates to the Unit Circle. To explore how a wave is related to the unit circle, move the point using the slider!
     </p>
 
     <p>
