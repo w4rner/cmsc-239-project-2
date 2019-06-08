@@ -122,6 +122,13 @@
   height: 200px;
 }
 
+.animation-three {
+  width: 600px;
+  height: 400px;
+  float: left;
+  display: inline-block;
+}
+
 .sub-animation {
   width: 150px;
   height: 100px;
@@ -130,13 +137,8 @@
 .checkbox-wave {
   display: inline-block;
   vertical-align: middle;
-  text-align: right;
   width: 12px;
   height: 12px;
-}
-
-svg {
-  align-content: center;
 }
 
 .animationFive {

@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   first();
   second();
   third();
+  fourth();
   fifth();
 }, false);
 
@@ -215,6 +216,7 @@ function third() {
 
   let t = 0;
   let height = 100;
+  let checkBoxHeight = 50;
 
   let A1 = 20;
   let f1 = 1/10;
@@ -250,23 +252,23 @@ function third() {
       }).join('L');
 
       let path2 = "M" + points.map(p => {
-          return p[0] + "," + (p[2] + height);
+          return p[0] + "," + (p[2] + checkBoxHeight);
       }).join('L')
 
       let path3 = "M" + points.map(p => {
-          return p[0] + "," + (p[3] + height);
+          return p[0] + "," + (p[3] + checkBoxHeight);
       }).join('L')
 
       let path4 = "M" + points.map(p => {
-          return p[0] + "," + (p[4] + height);
+          return p[0] + "," + (p[4] + checkBoxHeight);
       }).join('L')
 
       let path5 = "M" + points.map(p => {
-          return p[0] + "," + (p[5] + height);
+          return p[0] + "," + (p[5] + checkBoxHeight);
       }).join('L')
 
       let path6 = "M" + points.map(p => {
-          return p[0] + "," + (p[6] + height);
+          return p[0] + "," + (p[6] + checkBoxHeight);
       }).join('L')
 
       let sum = height;
@@ -319,6 +321,101 @@ function third() {
   animate();
 }
 
+// generates our fourth interactive animation
+function fourth() {
+  const margin = {top: 50, right: 20, bottom: 100, left: 80};
+  const width = 1100 - margin.left - margin.right;
+  const height = 550 - margin.top - margin.bottom;
+  console.log("here1")
+  const svg = d3.select('#fourthSVG')
+        .attr('width', width + margin.left + margin.right)
+        .attr('height', height + margin.top + margin.bottom);
+
+  const Y_SCALE = d3.scaleLinear().range([350, 50]).domain([-1, 1]);
+  const X_SCALE = d3.scaleLinear().range([10,600]).domain([0, 2 * Math.PI]);
+  console.log("here3")
+  const CIRC_Y = d3.scaleLinear().range([350, 50]).domain([-1, 1]);
+  const CIRC_X = d3.scaleLinear().range([700,1000]).domain([-1, 1]);
+
+  console.log("here5")
+
+  let sine = [];
+  for(var i = 0; i < Math.PI * 2; i+= .01){
+    sine.push([i, Math.sin(i)])
+  }
+
+  svg.append('line')
+  .attr('x1', X_SCALE(0))
+  .attr('x2', 600)
+  .attr('y1', Y_SCALE(0))
+  .attr('y2', Y_SCALE(0))
+  .attr('stroke', 'black')
+  .attr('stroke-width', 4);
+
+  svg.append('line')
+  .attr('x1', CIRC_X(-1))
+  .attr('x2', CIRC_X(1))
+  .attr('y1', CIRC_Y(0))
+  .attr('y2', CIRC_Y(0))
+  .attr('stroke', 'black')
+  .attr('stroke-width', 4);
+
+  svg.append('line')
+  .attr('x1', CIRC_X(0))
+  .attr('x2', CIRC_X(0))
+  .attr('y1', 50)
+  .attr('y2', 350)
+  .attr('stroke', 'black')
+  .attr('stroke-width', 4);
+
+  svg.selectAll('.circ')
+    .data(sine).enter().append('circle')
+    .attr('class', 'circ')
+    .attr('cx', d => X_SCALE(d[0]))
+    .attr('cy', d=> Y_SCALE(d[1]))
+    .attr('fill', 'green')
+    .attr('r', 3);
+
+
+  svg.append('circle')
+      .attr('cy' , CIRC_Y(0))
+      .attr('cx' , CIRC_X(0))
+      .attr('r', 150)
+      .attr('fill', 'none')
+      .attr('stroke', 'green')
+      .attr('stroke-width', '5px')
+
+  svg.append('circle')
+      .attr('cy' , CIRC_Y(0))
+      .attr('cx' , CIRC_X(1))
+      .attr('class', 'pnt2')
+      .attr('r', 8)
+      .attr('fill', 'Black')
+      .attr('stroke', 'none');
+
+  svg.append('circle')
+      .attr('cy' ,Y_SCALE(0))
+      .attr('cx' , X_SCALE(0))
+      .attr('class', 'pnt1')
+      .attr('r', 8)
+      .attr('fill', 'Black')
+      .attr('stroke', 'none');
+
+  $("#FourthSlider").on("input", function() {
+      let val = $(this).val();
+      svg.selectAll('.pnt1')
+      .transition()
+      .attr('cx', X_SCALE(val * Math.PI / 50))
+      .attr('cy', Y_SCALE(Math.sin(val * Math.PI / 50)));
+
+      svg.selectAll('.pnt2')
+      .transition()
+      .attr('cx', CIRC_X(Math.cos(val * Math.PI / 50)))
+      .attr('cy', CIRC_Y(Math.sin(val * Math.PI / 50)));
+  });
+}
+
+// generates our fifth interactive animation
 function fifth(){
     const margin = {top: 40, right: 20, bottom: 100, left: 80};
     const width = 1050 - margin.left - margin.right;
@@ -419,104 +516,4 @@ function fifth(){
     $("#FourierButton").on("click", function(){
       fourier(data,N)
     });
-
 }
-
-
-
-
-// Fourth animation
-const margin = {top: 50, right: 20, bottom: 100, left: 80};
-const width = 1100 - margin.left - margin.right;
-const height = 550 - margin.top - margin.bottom;
-console.log("here1")
-const svg = d3.select('#fourthSVG')
-      .attr('width', width + margin.left + margin.right)
-      .attr('height', height + margin.top + margin.bottom);
-
-const Y_SCALE = d3.scaleLinear().range([350, 50]).domain([-1, 1]);
-const X_SCALE = d3.scaleLinear().range([10,600]).domain([0, 2 * Math.PI]);
-console.log("here3")
-const CIRC_Y = d3.scaleLinear().range([350, 50]).domain([-1, 1]);
-const CIRC_X = d3.scaleLinear().range([700,1000]).domain([-1, 1]);
-
-console.log("here5")
-
-let sine = [];
-for(var i = 0; i < Math.PI * 2; i+= .01){
-  sine.push([i, Math.sin(i)])
-}
-
-svg.append('line')
-.attr('x1', X_SCALE(0))
-.attr('x2', 600)
-.attr('y1', Y_SCALE(0))
-.attr('y2', Y_SCALE(0))
-.attr('stroke', 'black')
-.attr('stroke-width', 4);
-
-svg.append('line')
-.attr('x1', CIRC_X(-1))
-.attr('x2', CIRC_X(1))
-.attr('y1', CIRC_Y(0))
-.attr('y2', CIRC_Y(0))
-.attr('stroke', 'black')
-.attr('stroke-width', 4);
-
-svg.append('line')
-.attr('x1', CIRC_X(0))
-.attr('x2', CIRC_X(0))
-.attr('y1', 50)
-.attr('y2', 350)
-.attr('stroke', 'black')
-.attr('stroke-width', 4);
-
-svg.selectAll('.circ')
-  .data(sine).enter().append('circle')
-  .attr('class', 'circ')
-  .attr('cx', d => X_SCALE(d[0]))
-  .attr('cy', d=> Y_SCALE(d[1]))
-  .attr('fill', 'green')
-  .attr('r', 3);
-
-
-svg.append('circle')
-    .attr('cy' , CIRC_Y(0))
-    .attr('cx' , CIRC_X(0))
-    .attr('r', 150)
-    .attr('fill', 'none')
-    .attr('stroke', 'green')
-    .attr('stroke-width', '5px')
-
-svg.append('circle')
-    .attr('cy' , CIRC_Y(0))
-    .attr('cx' , CIRC_X(1))
-    .attr('class', 'pnt2')
-    .attr('r', 8)
-    .attr('fill', 'Black')
-    .attr('stroke', 'none');
-
-svg.append('circle')
-    .attr('cy' ,Y_SCALE(0))
-    .attr('cx' , X_SCALE(0))
-    .attr('class', 'pnt1')
-    .attr('r', 8)
-    .attr('fill', 'Black')
-    .attr('stroke', 'none');
-
-
-
-
-
-    $("#FourthSlider").on("input", function() {
-        let val = $(this).val();
-        svg.selectAll('.pnt1')
-        .transition()
-        .attr('cx', X_SCALE(val * Math.PI / 50))
-        .attr('cy', Y_SCALE(Math.sin(val * Math.PI / 50)));
-
-        svg.selectAll('.pnt2')
-        .transition()
-        .attr('cx', CIRC_X(Math.cos(val * Math.PI / 50)))
-        .attr('cy', CIRC_Y(Math.sin(val * Math.PI / 50)));
-    });
