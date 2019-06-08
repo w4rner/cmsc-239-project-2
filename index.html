@@ -94,11 +94,15 @@
       </label>
     </div>
     <p class="container">
-      What if it was the other way around: and you were given the combined wave and asked to back out the frequencies of the individual waves. For example, sometimes cerulean wants a bass boost. In terms of waves, this means raising the amplitude of the lowest frequency waves (in this case, the 4th from the left has a frequency of 0.5Hz).
+       Now let's imagine cerulean recorded a song and wants a Bass Boost. In terms of waves, this means raising the amplitude of the lowest frequency waves (in this case, the 4th from the left has a frequency of 0.5Hz). But how can they figure out from a combined wave like the one shown, what the individual waves forming it are like?
     </p>
     <p class="container">
-      Fortunately, Jack & Patrick know some math and can help them: specifically the Fourier Transform! The
-      transform is constructed by using Euler's formula which relates to the Unit Circle. To explore how a wave is related to the unit circle, move the point using the slider!
+      Producers Jack & Patrick to the rescue! They know some math - specifically the Fourier Transform - and can help cerulean!
+    </p>
+      <img width="244" height="80" margin-left="auto" margin-right="auto" src="/img/Latex_Fourier_Transform.png" />
+    <p>
+      The transform is constructed by using Euler's formula which relates to the Unit Circle. To explore how a wave is related to the unit circle, move the point using the slider!
+    </p>
     </p>
     <div id=Fourth>
       <input type="range" min="0" max="100" value="0" step="0.01" id="FourthSlider" class="slider"> Position Slider</input>
@@ -124,7 +128,7 @@
     </div>
     <div class="center">
       <input type="button" id="FourierButton">Fourier Transform</input>
-      <input type="range" min="50" max="1000" value="0" step="10" id="FourierSlider">#N Samples</input>
+      <input type="range" min="20" max="100" value="20" step="1" id="FourierSlider">#N Samples</input>
     </div>
     <div class="container">
       <svg viewBox="10 10 800 400" class="main-animation" id="FourierSVG"></svg>
