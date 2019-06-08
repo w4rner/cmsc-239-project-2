@@ -9,9 +9,10 @@
 
 .subtitle {
   color: black;
-  font-family: Roboto-Black;
+  font-family: Verdana;
   font-size: 12px;
   font-weight: semi-bold;
+  text-align: center;
 }
 
 .max-width-1000 {
