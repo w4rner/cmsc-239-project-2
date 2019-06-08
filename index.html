@@ -11,17 +11,18 @@
 
   </head>
   <body class="container">
-    <h1 class="header">Analyzing Sound Waves with the Discrete Fourier Transform</h1>
+    <h1 class="header">Sound Waves with the Discrete Fourier Transform</h1>
+    <h2><a href="https://github.com/CrimsonRobot">CrimsonRobot</a>
+      <a href="https://github.com/w4rner">w4rner</a>
+        <a href="https://github.com/pmj714">pmj714</a>
     <div id="app" class="flex center"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="index.js"></script>
     <p class="container" id="text1">
-        Sound can be thought of as oscillations in air density over time, similar to a spring compressing and
-      decompressing. Such oscillations can be described by waves with a frequency, the number of oscillations
-      occurring in one second, and an amplitude, one-half the different between the highest and lowest point(s)
-      in the wave. In music, different notes correspond to different frequencies, and loudness corresponds to
-      amplitude.
+        Sound can be thought of as oscillations in air density over time. Such oscillations can be described by waves which have the following two parameters: 1). Frequency: the number of oscillations
+      occurring in one second. 2). Amplitude: the height of the wave. In music, different notes correspond to different frequencies, and loudness corresponds to
+      amplitude. Explore the effect of changing these two parameters on this wave!
     </p>
     <div class="container">
       <svg class="main-animation">
@@ -31,7 +32,7 @@
       <label>Amplitude<input type="range" min="0" max="80" value="20" step="1" id="Aslider1" /></label>
     </div>
     <p class="container" id="text2">
-      When two waves intersect in space, their values add linearly as seen below:
+      When two waves intersect in space, their values add linearly. Create two waves traveling towards each other and watch them combine when they meet!
     </p>
     <div class="container">
       <svg class="main-animation">
@@ -42,6 +43,9 @@
       <label><input type="range" min="0" max="80" value="20" step="1" id="Aslider22" />Right Wave Amplitude</label>
       <label><input type="range" min="0" max="0.2" value="0.1" step="0.001" id="Fslider22" />Right Wave Frequency</label>
     </div>
+    <p class="container" id="text3">
+      Let's consider a chord in music. It is the addition of many notes, and therefore many sounds. Build your own musical chord by selecting combinations of the following 6 waves!
+    </p>
     <div class="container">
       <svg class="main-animation">
         <path d="" id="final3"></path>
@@ -83,18 +87,11 @@
       </label>
     </div>
     <p class="container">
-      It's non-obvious that the component frequencies are 1/10, 1/18, 1/22, 1/40, 1/9, and 1/2 and music includes
-      far more than just six frequencies, not to mention that music is not composed of the same pattern of notes.
-      Why should we care about separating a sound wave component frequencies? Well knowing which frequencies
-      compose a sound wave, we can boost the parts we want and remove the parts we don't, such as crackles caused
-      by random noise. It's essential to music production to accurately find component frequencies!
+      What if it was the other way around: and you were given the combined wave and asked to back out the frequencies of the individual waves. This could be really useful for a music producer. For example, perhaps you want to boost the amplitude of the lowest frequency waves (in this case, the 4th from the left has a frequency of 0.5Hz).
     </p>
     <p class="container">
-      Fortunately, there exists a mathematical tool for finding these frequencies: the Fourier Transform! The
-      transform is constructed by using the periodicity of Euler's formula and of wave functions. Consider a
-      point traveling on a sine wave, mapped to a point on a circle, as shown below. The point travels around the circle in
-      the same time it takes to complete one period of the wave, i.e. the amount of time it takes for the wave to
-      repeat.
+      Fortunately, we've got math: specifically the Fourier Transform! The
+      transform is constructed by using Euler's formula and wave functions. To explore how a wave is related to the unit circle, move the point using the slider!
     </p>
 
     <p>
