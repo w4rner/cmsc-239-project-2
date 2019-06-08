@@ -27,6 +27,14 @@
   color: black;
 }
 
+.subheader {
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+  font-family: Verdana;
+  color: black;
+}
+
 .center {
   align-items: center;
   justify-content: center;
