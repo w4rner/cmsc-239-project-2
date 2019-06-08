@@ -24,7 +24,7 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="index.js"></script>
     <p class="container" id="text0">
-      For musicians like our author cerulean, sounds are a wonderful tool, which can be combined and crafted to form pieces of music. But we often take for granted the science behind the sounds. Let's explore!
+      For musicians like one of data vis specialists cerulean, sounds are a wonderful tool, which can be combined and crafted to form pieces of music. But we often take for granted the science behind the sounds. Let's explore!
       </p>
       <p class="container" id="text1">
     Sound can be thought of as oscillations in air density over time. Such oscillations can be described by waves which have the following two parameters: 1). Frequency: the number of oscillations occurring in one second. 2). Amplitude: the height of the wave. In music, different notes correspond to different frequencies, and loudness corresponds to
@@ -96,15 +96,15 @@
        Now let's imagine cerulean recorded a song and wants a Bass Boost. In terms of waves, this means raising the amplitude of the lowest frequency waves (in this case, the 4th from the left has a frequency of 0.5Hz). But how can they figure out from a combined wave like the one shown, what the individual waves forming it are like?
     </p>
     <p class="container">
-      cerulean's mathematical magicians Jack & Patrick to the rescue! They know some math - specifically the Fourier Transform:
+      cerulean's mathematical magicians Jack & Patrick to the rescue! They know some math - specifically the Fourier Transform. Fear not cerulean: this it the only formula you'll have to see!
     </p>
       <img width="244" height="80" margin-left="auto" margin-right="auto" src="img/Latex_Fourier_Transform.png">
     <p>
-      The exponential term is known as Euler's formula, which relates to the Unit Circle. To explore how a wave is related to the unit circle, move the point using the slider!
+      The exponential term is known as Euler's formula, which relates to the Unit Circle. To explore how a wave is related to the Unit Circle, we have included an example of a sine wave, which plots the y co-ordinate as you move around the Unit Circle. Move the point along the wave using the slider!
     </p>
     <div id=Fourth>
-      <input type="range" min="0" max="100" value="0" step="0.01" id="FourthSlider" class="slider"> Position Slider</input>
-      <svg viewBox="10 10 800 400" class="main-animation" id="fourthSVG"></svg>
+      <div><input type="range" min="0" max="100" value="0" step="0.01" id="FourthSlider" class="slider"></input></div>
+      <div><svg viewBox="10 10 800 400" class="main-animation" id="fourthSVG"></svg></div>
     </div>
     Now back to the problem! You'll notice the following wave is the combination formed earlier when all 6 waves were added together. Let's decompose this wave using a Fourier Transform: by clicking the white square!
     <div id="fourier">
@@ -129,10 +129,10 @@
       happens that when the two are out of sync, their product is relatively small.
       Below we can see what happens when we sample a period of time and calculate the Fourier transform of the
       complicated sum of waves we had above.
-      For our sum of six waves, we have six distinct peaks! The axis of the transform is not directly in terms of frequency, but rather in terms of the period times the frequency, Tk. One simply needs to divide by our period of 200*pi to determine the frequency.
+      For our sum of six waves, we have six distinct peaks! The axis of the transform is not directly in terms of frequency, but rather in terms of the period times the frequency, Tk. One simply needs to divide by our period of 200*pi to determine the frequency. Further, the number of frequencies the Fourier Transform can detect is limited to the half the number of samples we take.
     </p>
     <p>
-      Now we're mathematically informed, let's get back to the studio to record some new <a href="https://ceruleansounds.com">ceruleansounds</a>!
+      Now we know a little math behind the music, let's get back to the studio to record some new <a href="https://ceruleansounds.com">ceruleansounds</a>! Math Rock anyone?
     </p>
   </body>
 </html>
